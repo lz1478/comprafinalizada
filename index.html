@@ -10,7 +10,7 @@
       padding: 0;
       box-sizing: border-box;
     }
-
+    
     body {
       background-color: #c7332e;
       font-family: Arial, sans-serif;
@@ -21,15 +21,16 @@
       padding: 40px 20px;
       min-height: 100vh;
     }
-
+    
     .clickbox-text {
       color: #fff;
       font-size: 36px;
       font-weight: bold;
       margin-bottom: 40px;
       letter-spacing: 0.5px;
+      text-align: center;
     }
-
+    
     .card {
       background-color: #fff;
       border-radius: 40px;
@@ -38,7 +39,7 @@
       width: 100%;
       text-align: center;
     }
-
+    
     .banner {
       background-color: #4CAF50;
       color: #fff;
@@ -49,13 +50,94 @@
       border-radius: 12px;
       letter-spacing: 0.5px;
     }
-
-    .icon {
+    
+    .icon-container {
+      position: relative;
       width: 140px;
+      height: 140px;
       margin: 0 auto 35px;
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
+    
+    .icon-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #4CAF50, #45a049);
+      border-radius: 50%;
+    }
+    
+    .icon {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .cart-icon {
+      width: 80px;
+      height: 80px;
+      position: relative;
+    }
+    
+    .cart-body {
+      position: absolute;
+      width: 80px;
+      height: 40px;
+      border: 8px solid #fff;
+      border-top-left-radius: 20px;
+      border-top-right-radius: 20px;
+      border-bottom: none;
+      top: 20px;
+    }
+    
+    .cart-handle {
+      position: absolute;
+      width: 20px;
+      height: 10px;
+      border: 8px solid #fff;
+      border-bottom: none;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      top: 10px;
+      left: 15px;
+    }
+    
+    .cart-wheels {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border: 8px solid #fff;
+      border-radius: 50%;
+      bottom: 0;
+    }
+    
+    .wheel-left {
+      left: 8px;
+    }
+    
+    .wheel-right {
+      right: 8px;
+    }
+    
+    .check-mark {
+      position: absolute;
+      width: 40px;
+      height: 25px;
+      border-left: 8px solid #fff;
+      border-bottom: 8px solid #fff;
+      transform: rotate(-45deg);
+      left: 45px;
+      top: 55px;
+    }
+    
+    .divider {
+      height: 1px;
+      background-color: #e0e0e0;
+      width: 80%;
+      margin: 0 auto 35px;
+    }
+    
     .thanks {
       background-color: #c7332e;
       color: #fff;
@@ -67,13 +149,6 @@
       line-height: 1.3;
       border-radius: 10px;
       letter-spacing: 0.5px;
-    }
-    
-    .divider {
-      height: 1px;
-      background-color: #e0e0e0;
-      width: 80%;
-      margin: 0 auto 35px;
     }
     
     .info-text {
@@ -95,9 +170,14 @@
         margin-bottom: 35px;
       }
       
-      .icon {
+      .icon-container {
         width: 120px;
+        height: 120px;
         margin-bottom: 30px;
+      }
+      
+      .cart-icon {
+        transform: scale(0.85);
       }
       
       .thanks {
@@ -121,25 +201,18 @@
     <div class="banner">COMPRA FINALIZADA!</div>
 
     <!-- Carrinho com check -->
-    <svg class="icon" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="cartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stop-color="#4CAF50" />
-          <stop offset="100%" stop-color="#45a049" />
-        </linearGradient>
-      </defs>
-      
-      <circle cx="50" cy="50" r="45" fill="url(#cartGradient)" />
-      
-      <!-- Carrinho -->
-      <path d="M30,55 L70,55" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
-      <path d="M35,35 L65,35 L70,55 L30,55 Z" fill="none" stroke="#fff" stroke-width="6"/>
-      <circle cx="40" cy="65" r="5" fill="#fff"/>
-      <circle cx="60" cy="65" r="5" fill="#fff"/>
-      
-      <!-- Check -->
-      <path d="M40,50 L47,57 L60,43" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
+    <div class="icon-container">
+      <div class="icon-bg"></div>
+      <div class="icon">
+        <div class="cart-icon">
+          <div class="cart-handle"></div>
+          <div class="cart-body"></div>
+          <div class="cart-wheels wheel-left"></div>
+          <div class="cart-wheels wheel-right"></div>
+          <div class="check-mark"></div>
+        </div>
+      </div>
+    </div>
 
     <div class="divider"></div>
     
