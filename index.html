@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Compra Finalizada - ClickBox</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     * {
       margin: 0;
@@ -24,14 +23,15 @@
       padding: 20px;
     }
     
-    .clickbox-text {
-      color: #fff;
-      font-size: 36px;
-      font-weight: bold;
+    .logo-container {
       margin-bottom: 40px;
-      letter-spacing: 0.5px;
       text-align: center;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+    
+    .logo {
+      width: 220px;
+      height: auto;
+      filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
     }
     
     .card {
@@ -172,9 +172,8 @@
 
     /* Responsividade */
     @media (max-width: 480px) {
-      .clickbox-text {
-        font-size: 32px;
-        margin-bottom: 30px;
+      .logo {
+        width: 180px;
       }
       
       .banner {
@@ -205,8 +204,60 @@
   </style>
 </head>
 <body>
-  <!-- Logotipo em texto -->
-  <div class="clickbox-text">ClickBox</div>
+  <!-- Logotipo gráfico -->
+  <div class="logo-container">
+    <svg class="logo" viewBox="0 0 400 120">
+      <defs>
+        <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#FFFFFF" />
+          <stop offset="100%" stop-color="#FFD700" />
+        </linearGradient>
+        
+        <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur in="SourceAlpha" stdDeviation="3" />
+          <feOffset dx="0" dy="3" result="offsetblur"/>
+          <feFlood flood-color="rgba(0,0,0,0.3)"/>
+          <feComposite in2="offsetblur" operator="in"/>
+          <feMerge>
+            <feMergeNode/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      
+      <rect x="0" y="0" width="400" height="120" rx="25" fill="#c7332e" />
+      
+      <g transform="translate(50, 30)">
+        <!-- Letra C -->
+        <path d="M0,0 Q30,-20 60,0 Q30,20 0,0" fill="url(#textGradient)" filter="url(#shadow)" />
+        <path d="M20,0 Q40,10 40,30 Q40,50 20,60 Q0,50 0,30 Q0,10 20,0" fill="url(#textGradient)" filter="url(#shadow)" />
+        
+        <!-- Letra L -->
+        <path d="M80,0 L80,60 L120,60 L120,50 L90,50 L90,0 Z" fill="url(#textGradient)" filter="url(#shadow)" />
+        
+        <!-- Letra I -->
+        <path d="M140,0 L180,0 L180,10 L160,10 L160,50 L180,50 L180,60 L140,60 L140,50 L160,50 L160,10 L140,10 Z" fill="url(#textGradient)" filter="url(#shadow)" />
+        
+        <!-- Letra C -->
+        <path d="M200,0 Q230,-20 260,0 Q230,20 200,0" fill="url(#textGradient)" filter="url(#shadow)" />
+        <path d="M220,0 Q240,10 240,30 Q240,50 220,60 Q200,50 200,30 Q200,10 220,0" fill="url(#textGradient)" filter="url(#shadow)" />
+        
+        <!-- Letra K -->
+        <path d="M280,0 L280,60 L300,60 L300,30 L320,50 L340,30 L320,10 L300,30 L300,0 Z" fill="url(#textGradient)" filter="url(#shadow)" />
+        
+        <!-- Letra B -->
+        <path d="M360,0 L360,60 L400,60 L400,50 L370,50 L370,30 L390,30 L390,20 L370,20 L370,10 L400,10 L400,0 Z" fill="url(#textGradient)" filter="url(#shadow)" />
+        <path d="M360,0 L380,0 Q400,10 380,30 Q400,50 380,60 L360,60 Z" fill="url(#textGradient)" filter="url(#shadow)" />
+        
+        <!-- Letra O -->
+        <path d="M420,0 L460,0 L460,60 L420,60 Z" fill="url(#textGradient)" filter="url(#shadow)" />
+        <path d="M430,10 L450,10 L450,50 L430,50 Z" fill="#c7332e" />
+        
+        <!-- Letra X -->
+        <path d="M480,0 L500,0 L520,20 L540,0 L560,0 L540,30 L560,60 L540,60 L520,40 L500,60 L480,60 L500,30 Z" fill="url(#textGradient)" filter="url(#shadow)" />
+      </g>
+    </svg>
+  </div>
 
   <!-- Cartão -->
   <div class="card">
